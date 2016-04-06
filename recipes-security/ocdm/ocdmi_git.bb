@@ -12,7 +12,9 @@ SRCREV_pn-ocdmi ?= "${AUTOREV}"
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECONF_append = "${@base_contains('MACHINE_FEATURES', 'optee', '--enable-aes-ta', '', d)} "
+EXTRA_OECONF_append = "${@base_contains('MACHINE_FEATURES', 'optee', '--enable-aes-ta', '', d)} \
+   ${@'--enable-playready' if d.getVar('ENABLE_MS_PLAYREADY', True) == '1' else ''} \
+"
 
 # * use-playready : Enables support for Playready CDMI.
 #
@@ -24,7 +26,15 @@ DEPENDS_append = "${@base_contains('MACHINE_FEATURES','optee',' optee-aes-decryp
 
 # Only ClearKey implementation depends on ssl
 DEPENDS_remove = " \
-  ${@base_contains('PACKAGECONFIG','use-playready','openssl','',d)} \
+    ${@'openssl' if d.getVar('ENABLE_MS_PLAYREADY', True) == '1' else ''} \
   "
+
+DEPENDS_append = " \
+   ${@'playready' if d.getVar('ENABLE_MS_PLAYREADY', True) == '1' else ''} \
+   "
+
+do_compile() {
+  oe_runmake clean all  -j1
+}
 
 inherit autotools
