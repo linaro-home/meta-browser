@@ -193,7 +193,7 @@ GYP_DEFINES += "${ARMFPABI} release_extra_cflags='-Wno-error=unused-local-typede
 # a few times in the past already; making them variables makes it easier to handle that
 CHROMIUM_X11_DEPENDS = "xextproto gtk+ libxi libxss"
 CHROMIUM_X11_GYP_DEFINES = ""
-CHROMIUM_WAYLAND_DEPENDS = "wayland libxkbcommon"
+CHROMIUM_WAYLAND_DEPENDS = "wayland"
 CHROMIUM_WAYLAND_GYP_DEFINES = "use_ash=1 use_aura=1 chromeos=0 use_ozone=1"
 
 python() {
