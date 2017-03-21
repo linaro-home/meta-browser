@@ -7,7 +7,7 @@ DESCRIPTION = "Open Content Decryption Module"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=ea83f8bc099c40bde8c4f2441a6eb40b"
 
-SRC_URI = "git://github.com/kuscsik/linaro-cdmi.git;protocol=https;branch=master"
+SRC_URI = "git://github.com/linaro-home/open-content-decryption-module-cdmi.git;protocol=https;branch=master"
 SRCREV_pn-ocdmi ?= "${AUTOREV}"
 
 S = "${WORKDIR}/git"

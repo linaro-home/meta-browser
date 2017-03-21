@@ -9,9 +9,9 @@ SRCREV_cef = "bbad53dfca9f98dddcb31a590410fece0a4f0234"
 SRCREV_egl = "a5b81b7617ba6757802b9b5f8c950034d5f961ec"
 SRCREV_FORMAT = "cef_egl_tools"
 
-SRC_URI = "http://people.linaro.org/~zoltan.kuscsik/chromium-browser/chromium_rev_${PV}.tar.xz \
-           git://github.com/kuscsik/chromiumembedded.git;protocol=https;destsuffix=src/cef;branch=aura;name=cef \
-           git://github.com/kuscsik/ozone-egl.git;protocol=https;destsuffix=src/ui/ozone/platform/egl;branch=master;name=egl \
+SRC_URI = "http://people.linaro.org/~peter.griffin/chromium-browser/chromium_rev_${PV}.tar.xz \
+           git://github.com/linaro-home/chromiumembedded.git;protocol=https;destsuffix=src/cef;branch=aura;name=cef \
+           git://github.com/linaro-home/ozone-egl.git;protocol=https;destsuffix=src/ui/ozone/platform/egl;branch=master;name=egl \
            git://chromium.googlesource.com/chromium/tools/depot_tools.git;protocol=https;destsuffix=depot_tools;branch=master;name=tools \
            file://01_get_svn_version_from_LASTCHANGE.patch \
 	   file://cef-simple \

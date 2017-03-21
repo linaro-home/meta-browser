@@ -4,7 +4,7 @@
 #
 #    Tested with EME test site:
 #
-#    http://people.linaro.org/~zoltan.kuscsik/dash.js/samples/dash-if-reference-player/eme.html
+#    http://people.linaro.org/~peter.griffin/dash.js/samples/dash-if-reference-player/eme.html
 
 
 /usr/bin/chromium/chrome --no-sandbox  \
