@@ -192,7 +192,8 @@ CHROMIUM_EXTRA_ARGS ?= " \
 	${@bb.utils.contains('PACKAGECONFIG', 'impl-side-painting', '--enable-gpu-rasterization --enable-impl-side-painting', '', d)} \
 "
 
-GYP_DEFINES += "${ARMFPABI} release_extra_cflags='-Wno-error=unused-local-typedefs' sysroot=''"
+GYP_DEFINES += "${ARMFPABI} release_extra_cflags='-Wno-error=unused-local-typedefs' sysroot='' \
+	${@bb.utils.contains("AVAILTUNES", "mips", "", "release_extra_cflags='-fno-delete-null-pointer-checks'", d)}"
 
 # These are present as their own variables, since they have changed between versions
 # a few times in the past already; making them variables makes it easier to handle that
